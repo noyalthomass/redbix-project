@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+
+// @import '~font-awesome/css/font-awesome.css';
+
+// @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Libre+Baskerville:wght@700&family=Libre+Franklin&family=Playfair+Display:wght@400;700,300&family=Poppins:ital,wght@0,100;0,500;0,600;1,100&family=Roboto&display=swap');
+
+// @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+
+body {
+
+    padding: 0;
+
+    margin: 0;
+
+    font-family: 'Poppins', sans-serif;
+
+    background-color: rgb(245, 245, 245);
+
+
+
+    .main-container {
+
+        margin-left: 220px;
+
+        border-bottom-left-radius: 10px;
+
+        transition: margin-left 0.3s ease;
+
+
+
+    }
+
+
+
+    &.open {
+
+        .main-container {
+
+            margin-left: 220px;
+
+
+
+        }
+
+    }
+
+
+
+    &.close {
+
+        .main-container {
+
+            margin-left: 80px;
+
+        }
+
+    }
+
+}

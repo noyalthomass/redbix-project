@@ -1,0 +1,33 @@
+.header {
+    background-color: 	#DC143C;
+    padding: 25px;
+    box-shadow:rgba(100,100,111,0.2) 0px 7px 29px 0px;
+    position: sticky                               ;
+    z-index: 99999;
+    width: 100%;
+}   
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.option a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+}
+.button_color{
+    background-color:yellow;
+    color :yellow;
+}
+
+button{
+    padding: 10px;
+
+}

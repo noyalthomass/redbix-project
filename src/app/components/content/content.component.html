@@ -1,0 +1,141 @@
+
+    <div class="shipContainer">
+        <img src="/assets/ship.jpeg" alt="image" width="100%" height="135px">
+    </div>
+    <div class="container">
+
+  <!-- Heading Container -->
+  <div class="heading-container">
+    <h3 class="heading">Approve Clearing Agency</h3>
+  </div>
+  
+  <div class="wrapper">
+      <!-- Sub Heading -->
+      <div class="sub-heading"> 
+        <span class="icon">□</span>
+        <span class="text" >Search Criteria</span>
+      </div>
+
+      <!-- Input Fields -->     
+      <div class="input-fields">
+        <div class="">
+          <div class="input-group">
+            <label>CR Numbers:</label>
+            <input type="text" />
+          </div>
+          <div class="input-group">
+            <label>Agency Name:</label>
+            <input type="text" />
+          </div>
+          <div class="input-group">
+            <label>Customs Code:</label>
+            <input type="text" />
+          </div>
+          <div class="input-group">
+            <label>Creation Date From:</label>
+            <div>
+            <input type="date" />
+            <!-- <span class="calendar-icon">📅</span> -->
+          </div>
+
+          </div>
+          <div class="input-group">
+            <label>Clearing Agency Type:</label>
+            <select class="selectClass" >
+              <option>Option 1</option>
+              <option>Option 2</option>
+            </select>
+          </div>
+        </div>
+        <div class="">
+          <div class="input-group">
+            <label>Status:</label>
+            <select class="selectClass" >
+              <option>Option 1</option>
+              <option>Option 2</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label>Establishment ID:</label>
+            <input type="text" />
+          </div>
+          <div class="input-group">
+            <label>Creation Date To:</label>
+            <input type="text" />
+            <!-- <span class="calendar-icon">📅</span> -->
+          </div>
+          <!-- Add other right side input fields here -->
+        </div>
+      </div>
+
+    
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <button class="search-button">Search</button>
+        <button class="reset-button">Reset</button>
+      </div>
+
+
+      <div class="sub-heading"> 
+        <span class="icon">□</span>
+        <span class="text" >Search Results</span>
+      </div>
+
+
+      <div>
+        <table mat-table [dataSource]="dataSource">
+          <ng-container matColumnDef="No">
+            <th mat-header-cell *matHeaderCellDef [style.background-color]="'gray'">S/No</th>
+            <td mat-cell *matCellDef="let element">{{element.No }}</td>
+        </ng-container>
+          <ng-container matColumnDef="EstablishmentId">
+              <th mat-header-cell *matHeaderCellDef [style.background-color]="'gray'">Establishment Id</th>
+              <td mat-cell *matCellDef="let element">{{element.EstablishmentId }}</td>
+          </ng-container>
+      
+          <ng-container matColumnDef="CRNumber">
+              <th mat-header-cell *matHeaderCellDef [style.background-color]="'gray'">CR Number</th>
+              <td mat-cell *matCellDef="let element">{{element.CRNumber}}</td>
+          </ng-container>
+      
+          <ng-container matColumnDef="CustomerCode">
+              <th mat-header-cell *matHeaderCellDef [style.background-color]="'gray'">Customer Code</th>
+              <td mat-cell *matCellDef="let element">{{element.CustomerCode }}</td>
+          </ng-container>
+      
+          <ng-container matColumnDef="AgencyName">
+              <th mat-header-cell *matHeaderCellDef [style.background-color]="'gray'">Agency Name</th>
+              <td mat-cell *matCellDef="let element">{{element.AgencyName }}</td>
+          </ng-container>
+      
+          <ng-container matColumnDef="Status">
+              <th mat-header-cell *matHeaderCellDef [style.background-color]="'gray'">Status</th>
+              <td mat-cell *matCellDef="let element">{{element.Status }}</td>
+          </ng-container>
+          <ng-container matColumnDef="CreationDate">
+            <th mat-header-cell *matHeaderCellDef [style.background-color]="'gray'">Creation Date</th>
+            <td mat-cell *matCellDef="let element">{{element.CreationDate }}</td>
+        </ng-container>
+        <ng-container matColumnDef="ClearingAgencyType">
+          <th mat-header-cell *matHeaderCellDef [style.background-color]="'gray'">Clearing Agency Type</th>
+          <td mat-cell *matCellDef="let element">{{element.ClearingAgencyType }}</td>
+      </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns:displayedColumns;"></tr>
+      </table>
+
+        
+      </div>
+      <div>
+        <mat-paginator 
+        #paginator
+        [pageSize]="dataSource.data.length"
+        [pageSizeOptions]="pageSizeOptions" 
+        showFirstLastButtons
+        >
+        </mat-paginator>
+    </div>
+   </div>
+</div>

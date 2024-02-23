@@ -1,0 +1,40 @@
+<!-- Sidebar content -->
+
+<div class="sidebar" [ngClass]="state">
+  <button class="toggle-btn" (click)="toggleSidebar()">
+    <i
+      class="fa"
+      [ngClass]="{
+        'fa-chevron-left': state === 'open',
+        'fa-chevron-right': state === 'close'
+      }"
+      aria-hidden="true"
+    ></i>
+  </button>
+
+  <!-- <div class="banner">
+
+
+
+        <img src="assets/images/logo1.png" class="logo">
+
+    </div> -->
+
+  <div class="menu-list">
+    <ul>
+      <li
+        *ngFor="let menu of menuList"
+        [matTooltip]="state === 'close' ? menu.name : ''"
+        matTooltipPosition="right"
+      >
+        <i
+          class="fa-solid fa-play"
+          aria-hidden="true"
+          [ngClass]="menu.icon"
+        ></i>
+
+        <ng-container *ngIf="state === 'open'"> {{ menu.name }}</ng-container>
+      </li>
+    </ul>
+  </div>
+</div>
